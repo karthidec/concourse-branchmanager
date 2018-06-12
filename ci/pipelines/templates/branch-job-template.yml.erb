@@ -1,0 +1,8 @@
+- name: Hello World (<%= branch_name.gsub('/', '-').gsub('#', '-').squeeze('-') %>)
+  max_in_flight: 1
+  plan:
+  - get: code-src
+    resource: <%= uri.split('/').last.gsub('.git', '') %>(<%= branch_name.gsub('/', '-').gsub('#', '-').squeeze('-') %>)
+    trigger: true
+  - task: Say Hello
+    file: code-src/ci/tasks/hello.yml
