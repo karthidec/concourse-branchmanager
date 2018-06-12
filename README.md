@@ -8,5 +8,5 @@
   - provision a pipeline server    
 
 # execution commands (for login & set pipeline)
-  - fly -t target1 login --team-name main --concourse-url <serverUrl>
+  - fly -t target1 login --team-name main --concourse-url yourServerUrl
   - fly -t target1 sp -p home1branch1 -c ci/pipeline.yml -l ci/secrets.yml 
